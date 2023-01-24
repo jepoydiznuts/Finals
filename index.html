@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Forest island ni jepoy</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="./ocean.js"></script>
+    <script src="./fire.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+  </head>
+  <body>
+    <a-scene>
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+      <a-asset>
+        <a-mixin id = "kayo" geometry = "primitive: cylinder; height: 1; radius: .1" material = "shader: standard; color: #854b00"></a-mixin>
+        <a-mixin id = "bolong1" geometry = "primitive: cone" material = "shader: standard; color: #35bd04" position="0 1.5 0" scale = ".4 .4 .4"></a-mixin>
+        <a-mixin id = "bolong2" geometry = "primitive: cone" material = "shader: standard; color: #35bd04" position="0 1.1 0" scale = ".65 .65 .65"></a-mixin>
+        <a-mixin id = "bolong3" geometry = "primitive: cone" material = "shader: standard; color: #35bd04" position="0 .75 0" scale = ".8 .8 .8"></a-mixin>
+      </a-asset>
+      
+
+
+      <!--- Kayu --->
+
+      <a-entity mixin = "kayo" position = "1 1 0">
+        <a-entity mixin = "bolong1"></a-entity>
+        <a-entity mixin = "bolong2"></a-entity>
+        <a-entity mixin = "bolong3"></a-entity>
+      </a-entity>
+
+      <a-entity mixin = "kayo" position = "-1 1.25 0">
+        <a-entity mixin = "bolong1"></a-entity>
+        <a-entity mixin = "bolong2"></a-entity>
+        <a-entity mixin = "bolong3"></a-entity>
+      </a-entity>
+
+            <a-entity mixin = "kayo" position = "1 1 1">
+        <a-entity mixin = "bolong1"></a-entity>
+        <a-entity mixin = "bolong2"></a-entity>
+        <a-entity mixin = "bolong3"></a-entity>
+      </a-entity>
+
+            <a-entity mixin = "kayo" position = "-1.5 1 -1">
+        <a-entity mixin = "bolong1"></a-entity>
+        <a-entity mixin = "bolong2"></a-entity>
+        <a-entity mixin = "bolong3"></a-entity>
+      </a-entity>
+
+            <a-entity mixin = "kayo" position = "-3 0.25 0.5">
+        <a-entity mixin = "bolong1"></a-entity>
+        <a-entity mixin = "bolong2"></a-entity>
+        <a-entity mixin = "bolong3"></a-entity>
+      </a-entity>
+
+            <a-entity mixin = "kayo" position = "0 1.25 -1">
+        <a-entity mixin = "bolong1"></a-entity>
+        <a-entity mixin = "bolong2"></a-entity>
+        <a-entity mixin = "bolong3"></a-entity>
+      </a-entity>
+
+      <!--- apuy --->
+      <a-entity class="campfire" position="0 1 0.6" rotation="10 0 0" scale= "2 2 2">
+            <a-cylinder radius="0.03" height="0.25" rotation="0 45 90" material="" geometry=""></a-cylinder>
+            <a-cylinder radius="0.03" height="0.25" rotation="0 -45 90" position="0 0.01 0" material="" geometry=""></a-cylinder>
+            <a-light type="point" intensity="0.3510955283436936" position="0 0.1 0" color="#FF440C" animation="property: intensity; to: 0.5; dur: 2000; loop: true; elasticity: 0; dir: alternate" light=""></a-light>
+            <a-entity scale="0.15 0.15 0.15" fire="particles: 500;" position="0.0 0.01 0.0"></a-entity>
+          </a-entity>
+
+      <!--- Batu --->
+      <a-dodecahedron position="-2 0.1 -5" color="#9c9c9c" scale="1 0.8 1"></a-dodecahedron>
+      <a-dodecahedron position="-6 0.7 -4" color="#9c9c9c" scale="2 1.8 2"></a-dodecahedron>
+      <a-dodecahedron position="-10 0.6 5" color="#9c9c9c" scale="2 1.8 2"></a-dodecahedron>
+      <a-dodecahedron position="-2 0.6 -20" color="#9c9c9c" scale="3 2.8 3"></a-dodecahedron>
+
+      <a-dodecahedron position="-2 0.1 -5" color="#9c9c9c" scale="1 0.8 1"></a-dodecahedron>
+      <a-dodecahedron position="-6 0.7 -4" color="#9c9c9c" scale="2 1.8 2"></a-dodecahedron>
+
+      <a-dodecahedron position="-10 0.6 5" color="#9c9c9c" scale="2 1.8 2"></a-dodecahedron>
+      <a-dodecahedron position="-2 0.6 -20" color="#9c9c9c" scale="3 2.8 3"></a-dodecahedron>
+
+
+      <a-entity shadow="" id="tree-cylinder" position="-2 -2 0">
+        <a-cylinder radius="0.03" material="" geometry=""></a-cylinder>
+        <a-cylinder radius="0.15" height="0.35" position="0 0.5 0" material="" geometry=""></a-cylinder>
+        <a-sphere radius="0.15" position="0 0.675 0" material="" geometry=""></a-sphere>
+        <a-sphere radius="0.15" position="0 0.325 0" material="" geometry=""></a-sphere>
+      </a-entity>
+      
+      <!--- danum --->
+      <a-ocean shadow="" depth="50" width="50" amplitude="0" amplitude-variance="0.1" speed="1.5" speed-variance="1" opacity="1" density="50" color="#5f8496" metalness="1" ocean="" rotation="-90 0 0"></a-ocean>
+      <a-ocean shadow="" depth="50" width="50" opacity="0.5" amplitude="0" amplitude-variance="0.15" speed="1.5" speed-variance="1" density="50" color="#5f8496" metalness="1" ocean="" rotation="-90 0 0"></a-ocean>
+
+      <!--- jakamu --->
+      <a-sky color="#adc5ff"></a-sky>
+      <a-sphere position="0 -4 0" translate="0 1.75 0" radius="5" color="yellow" roughness="0.2" shader = "flat"></a-sphere>
+    </a-scene>
+  </body>
+</html>
